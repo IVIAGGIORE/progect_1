@@ -5,15 +5,19 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import  java.text.ParseException;
 import com.trsining.ap.bean.Airline;
+import javax.xml.crypto.Data;
 
 public class AirlinMain {
 	
-	public static void main(String[] args) {
+
+	public static void main(String[] args) throws ParseException {
 		
 		List<Airline> airlines;		
 		airlines = new ArrayList<Airline>();
@@ -33,20 +37,19 @@ public class AirlinMain {
 	        airlines.get(i).setDestination(arrOfStr[0]);
 	        airlines.get(i).setNumberFlight(arrOfStr[1]);
 	       	airlines.get(i).setTypeAircraft(arrOfStr[2]);
-	        airlines.get(i).setTimeDeparture(arrOfStr[3]);
+	       	
+	       	Time  time  = null;       	
+	       	time  =  Time.valueOf(arrOfStr[3]); 
+	       	airlines.get(i).setTimeDeparture(time);
 	        
-	        List<String> week = new ArrayList<String>();
+	       	List<String> week = new ArrayList<String>();
 	       
 				for (int j = 4; j < arrOfStr.length; j++) {
 					week.add(arrOfStr[j]);	
 				}
 	       	airlines.get(i).setWeekDays(week);
 	        }
-	        
-
-		
-		
-		
+	     
 		
 	    for (Airline ar : airlines)
 	    {

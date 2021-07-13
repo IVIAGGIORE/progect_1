@@ -1,12 +1,14 @@
 package com.trsining.ap.bean;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class Airline {
 	private String destination;
 	private String numberFlight; 
 	private String typeAircraft; 
-	private String timeDeparture;
+	private Time timeDeparture;
 	private List<String> weekDays; 
 	
 	public void setDestination(String destination) {
@@ -18,7 +20,8 @@ public class Airline {
 	public void setTypeAircraft(String typeAircraft) {
 		this.typeAircraft = typeAircraft;
 	}
-	public void setTimeDeparture(String timeDeparture) {
+	public void setTimeDeparture(Time timeDeparture) {
+		
 		this.timeDeparture = timeDeparture;
 	}
 	public void setWeekDays(List<String> weekDays) {
@@ -34,7 +37,7 @@ public class Airline {
 	public String getTypeAircraft() {
 		return this.typeAircraft;
 	}
-	public String getTimeDeparture() {
+	public Time getTimeDeparture() {
 		return this.timeDeparture;
 	}
 	public List<String> getWeekDays() {
@@ -42,13 +45,14 @@ public class Airline {
 	}
 	
 	
-
 	@Override
 	public String toString() {
 		return "Airline [destination=" + destination + ", numberFlight=" + numberFlight + ", typeAircraft="
 				+ typeAircraft + ", timeDeparture=" + timeDeparture + ", weekDays=" + weekDays + "]";
 	}
 	
+	
+
 	
 	
 }
